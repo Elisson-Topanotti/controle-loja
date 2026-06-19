@@ -1,0 +1,261 @@
+/*Layout geral*/
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+
+/*Cabeçalho principal*/
+.main-header {
+  background: linear-gradient(90deg, #4e234f, #a245f3);
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.header-actions {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.header-actions input {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  width: 220px;
+}
+
+/*Botões gerais*/
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: #4CAF50;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.btn-primary:hover {
+  background: #45a049;
+}
+
+.btn-secondary {
+  background: #f4e10f;
+  color: rgb(0, 0, 0);
+}
+
+.btn-pagamento { background: #4CAF50; color: white; }
+.btn-alterar   { background: #2196F3; color: white; }
+.btn-excluir   { background: #f44336; color: white; }
+.btn-compra    { background: #f4e10f; color: rgb(0, 0, 0); }
+
+.btn-confirm {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background: #4CAF50;
+  color: white;
+  border-radius: 6px;
+}
+
+/*Grid de clientes*/
+.clientes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+/*Card de cliente*/
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.card p {
+  margin: 6px 0;
+  color: #555;
+}
+
+.card button {
+  margin: 5px 5px 0 0;
+  font-size: 14px;
+}
+
+/*Tabela de compras*/
+.compras-container {
+  margin-top: 15px;
+  overflow-x: auto;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.tabela-compras {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  table-layout: fixed;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.tabela-compras th {
+  background: #4CAF50;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}
+
+.tabela-compras tr:nth-child(even) { background: #f9f9f9; }
+.tabela-compras tr:nth-child(odd)  { background: #fff; }
+
+.tabela-compras td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.tabela-compras input {
+  width: 95%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.tabela-compras .btn-compra {
+  background: #f4e10f;
+  color: rgb(0, 0, 0);
+  border-radius: 6px;
+  padding: 6px 10px;
+  transition: background 0.3s;
+}
+
+.tabela-compras .btn-compra:hover {
+  background: #e68900;
+}
+
+/*Formulário de novo cliente*/
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.form-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/*Modal*/
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/*Toast*/
+#toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 2000;
+}
+
+.toast {
+  background: #333;
+  color: #fff;
+  padding: 12px 20px;
+  margin-top: 10px;
+  border-radius: 6px;
+  opacity: 0.9;
+  animation: fadein 0.5s, fadeout 0.5s 3s;
+}
+
+.toast.success { background: #4CAF50; }
+.toast.error   { background: #f44336; }
+
+@keyframes fadein { from {opacity:0;} to {opacity:0.9;} }
+@keyframes fadeout { from {opacity:0.9;} to {opacity:0;} }

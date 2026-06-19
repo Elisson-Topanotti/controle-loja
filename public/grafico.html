@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Gráfico Financeiro</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="financeChart"></canvas>
+  <script>
+    fetch("/clientes")
+      .then(res => res.json())
+      .then(clientes => {
+        const totalReceber = clientes.reduce((acc, c) => acc + c.total_devido, 0);
+        const totalRecebido = clientes.reduce((acc, c) => acc + c.pago_mes, 0);
+
+        new Chart(document.getElementById("financeChart"), {
+          type: "bar",
+          data: {
+            labels: ["A Receber", "Recebido"],
+            datasets: [{
+              label: "Valores",
+              data: [totalReceber, totalRecebido],
+              backgroundColor: ["#dc3545", "#28a745"]
+            }]
+          }
+        });
+      });
+  </script>
+</body>
+</html>

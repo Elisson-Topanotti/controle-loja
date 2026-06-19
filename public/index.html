@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Controle de Contas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="main-header">
+    <h1>Controle de Contas</h1>
+    <div class="header-actions">
+      <button id="novoCliente" class="btn-primary">+ Novo Cliente</button>
+      <input type="text" id="pesquisaCliente" placeholder="🔍 Pesquisar cliente...">
+      <button id="verGrafico" class="btn-secondary">📊 Ver Gráfico</button>
+    </div>
+  </header>
+
+  <main id="clientesContainer" class="clientes-grid"></main>
+
+  <!-- Modal genérico -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="modal-close" class="close">&times;</span>
+      <h2 id="modal-title"></h2>
+      <div id="modal-body"></div>
+      <button id="modal-confirm" class="btn-confirm">Confirmar</button>
+    </div>
+  </div>
+
+  <!-- Toast container -->
+  <div id="toast-container"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
