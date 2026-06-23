@@ -254,6 +254,11 @@ button {
   animation: fadein 0.5s, fadeout 0.5s 3s;
 }
 
+.input-invalid {
+  border-color: #f44336 !important;
+  box-shadow: 0 0 0 3px rgba(244,67,54,0.08);
+}
+
 .toast.success { background: #4CAF50; }
 .toast.error   { background: #f44336; }
 
