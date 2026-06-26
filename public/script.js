@@ -62,9 +62,9 @@ function carregarClientes() {
           <p>Telefone: ${cliente.telefone}</p>
           <p>Total devido: R$ ${cliente.total_devido.toFixed(2)}</p>
           <p>Pago no mês: R$ ${cliente.pago_mes.toFixed(2)}</p>
-          <button class="btn-pagamento">💰 Registrar pagamento</button>
-          <button class="btn-alterar">✏️ Alterar pagamento</button>
-          <button class="btn-excluir">🗑️ Excluir cliente</button>
+          <button class="btn-pagamento">Registrar pagamento</button>
+          <button class="btn-alterar">Alterar pagamento</button>
+          <button class="btn-excluir">Excluir cliente</button>
           <div class="compras-container">
             <h4>Compras:</h4>
             <table class="tabela-compras">
@@ -81,7 +81,7 @@ function carregarClientes() {
                   <td><input type="text" id="produto-${cliente.id}" placeholder="Produto"></td>
                   <td><input type="number" id="valor-${cliente.id}" placeholder="Valor"></td>
                   <td><input type="date" id="data-${cliente.id}"></td>
-                  <td><button class="btn-compra">➕ Salvar</button></td>
+                  <td><button class="btn-compra">Salvar</button></td>
                 </tr>
               </tbody>
             </table>
@@ -181,7 +181,7 @@ function carregarClientes() {
                 <td>${compra.produto}</td>
                 <td>R$ ${compra.valor.toFixed(2)}</td>
                 <td>${compra.data}</td>
-                <td><button class="btn-excluir">🗑️ Excluir</button></td>
+                <td><button class="btn-excluir">Excluir</button></td>
               `;
               tr.querySelector(".btn-excluir").addEventListener("click", () => {
                 abrirModal("Excluir Compra", `
