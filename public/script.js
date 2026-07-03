@@ -18,6 +18,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Botão tema escuro
+const botao = document.getElementById("TemaEscuro");
+botao.addEventListener("click", () => {
+    document.body.classList.toggle("dark-theme");
+});
+
 // Função para abrir modal
 function abrirModal(titulo, conteudoHTML, onConfirm) {
   document.getElementById("modal-title").textContent = titulo;
