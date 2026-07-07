@@ -19,9 +19,27 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // Botão tema escuro
-const botao = document.getElementById("TemaEscuro");
-botao.addEventListener("click", () => {
-    document.body.classList.toggle("dark-theme");
+const html = document.documentElement;
+const checkbox = document.getElementById("TemaEscuro");
+
+// Carrega o tema salvo
+const temaSalvo = localStorage.getItem("tema");
+
+if (temaSalvo === "dark") {
+    html.classList.add("dark-theme");
+    checkbox.checked = true;   // <- deixa o interruptor na posição correta
+} else {
+    checkbox.checked = false;
+}
+checkbox.addEventListener("change", () => {
+
+    html.classList.toggle("dark-theme");
+
+    localStorage.setItem(
+        "tema",
+        checkbox.checked ? "dark" : "light"
+    );
+
 });
 
 // Função para abrir modal
